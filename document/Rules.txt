@@ -1,0 +1,18 @@
+Veritabanı İlişkileri ve İş Kuralları
+
+    Kullanıcılar tablosu, İstekler tablosu ile bire çok ilişki içindedir (bir kullanıcı birçok istek yapabilir).
+    Toplu Taşıma Araçları tablosu, Araç Hat Atamaları tablosu ile bire çok ilişki içindedir (bir araç birçok hatta atanabilir).
+    İstasyonlar ve Hatlar tabloları, Hat İstasyonları tablosu ile çoktan çoğa ilişki içindedir (bir hat birçok istasyondan oluşur ve bir istasyon birçok hatta dahil olabilir).
+    Araç Hat Atamaları tablosu, Toplu Taşıma Araçları ve Hatlar tabloları ile bire çok ilişki içindedir.
+    İstekler tablosu, sistemdeki tüm değişiklikleri ve işlemleri kaydeder.
+    İş Kuralları tablosu, sistemde geçerli olan tüm iş kurallarını tanımlar ve İş Kuralı Hataları tablosu, bu kurallara uymayan hataları kaydeder.
+
+İş Kuralları Örnekleri
+
+    Plaka Boş Olmamalıdır:
+        RuleID: 1
+        RuleDescription: "Araç plakası boş olamaz."
+
+    Bir Hat En Az 2 İstasyondan Oluşmalıdır:
+        RuleID: 2
+        RuleDescription: "Bir hat en az 2 istasyondan oluşmalıdır."

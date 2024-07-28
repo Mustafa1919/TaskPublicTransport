@@ -1,0 +1,40 @@
+ext {
+    /**
+     * Bağımlılıkları versiyonlama işlemleri:
+     */
+    versions = [
+            springBoot          : "3.2.2",
+            lombok              : "1.18.34",
+            mapStruct           : "1.5.5.Final",
+            postgreSql          : "42.7.3",
+            swaggerApi          : "2.3.0",
+            jwt                 : "0.11.5",
+            test                : "5.10.2",
+            gateway             : "3.1.8",
+            eureka              : "3.1.4",
+            swagger             : "2.5.0"
+    ]
+
+    libs = [
+            springBootWeb                   : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+            springBootDataJpa               : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
+            springBootTest                  : "org.springframework.boot:spring-boot-test:$versions.springBoot",
+            security                        : "org.springframework.boot:spring-boot-starter-security:$versions.springBoot",
+            postgreSql                      : "org.postgresql:postgresql:$versions.postgreSql",
+            lombok                          : "org.projectlombok:lombok:$versions.lombok",
+            mapStruct                       : "org.mapstruct:mapstruct:$versions.mapStruct",
+            mapStructProcessor              : "org.mapstruct:mapstruct-processor:$versions.mapStruct",
+            swaggerApi                      : "org.springdoc:springdoc-openapi-starter-webmvc-ui:$versions.swaggerApi",
+            jjwtApi                         : "io.jsonwebtoken:jjwt-api:$versions.jwt",
+            jjwtImpl                        : "io.jsonwebtoken:jjwt-impl:$versions.jwt",
+            jjwtJackson                     : "io.jsonwebtoken:jjwt-jackson:$versions.jwt",
+            test                            : "org.junit.jupiter:junit-jupiter-api:$versions.test",
+            gateway                         : "org.springframework.cloud:spring-cloud-starter-gateway:$versions.gateway",
+            eurekaClient                    : "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:$versions.eureka",
+            eurekaServer                    : "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:$versions.eureka",
+            swagger                         : "org.springdoc:springdoc-openapi-starter-webmvc-ui:$versions.swagger",
+//            bind                            : "javax.xml.bind:jaxb-api:$versions.bind"
+
+    ]
+
+}

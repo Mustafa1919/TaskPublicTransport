@@ -1,0 +1,33 @@
+- Swager Dökümantasyon -> http://localhost:8080/swagger-ui/index.html
+
+EKSİKLER 
+
+- EUREKA Server Config
+- Aracın hatta tanımlanması (EUREKA server aktif olmadığından)
+- API Gateway yazılması
+- Unit Test
+- Liguibase 
+- Redis Cache Mekanizması 
+- Rate Limiter Entegrasyonu(resilience4j)
+- DB Initialize
+- Auth Yarım
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

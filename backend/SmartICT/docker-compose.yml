@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgre
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=citizix_db
+    networks:
+      shared-network:
+  auth:
+    image: auth:latest
+    build:
+      context: .
+    networks:
+      shared-network:
+  eureka:
+    image: eureka:latest
+    build:
+      context: .
+    networks:
+      shared-network:
+  gateway:
+    image: gateway:latest
+    build:
+      context: .
+    networks:
+      shared-network:
+  personnel:
+    image: personnel:latest
+    build:
+      context: .
+    networks:
+      shared-network:
+  route:
+    image: route:latest
+    build:
+      context: .
+    networks:
+      shared-network:
+  station:
+    image: station:latest
+    build:
+      context: .
+    networks:
+      shared-network:
+  vehicle:
+    image: vehicle:latest
+    build:
+      context: .
+    networks:
+      shared-network:
+networks:
+  shared-network:

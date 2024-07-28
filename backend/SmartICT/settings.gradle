@@ -1,0 +1,9 @@
+rootProject.name = 'SmartICT'
+include 'Auth'
+include 'Gateway'
+include 'Eureka'
+include 'Personnel'
+include 'Vehicle'
+include 'Station'
+include 'Route'
+
