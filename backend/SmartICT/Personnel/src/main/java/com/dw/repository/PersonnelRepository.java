@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface PersonnelRepository extends JpaRepository<Employee, String> {
 
-    Optional<Employee> findByUserNameOrEMail(String loginName);
-    void deleteByUserNameOrEMail(String loginName);
+    Optional<Employee> findByUserNameOrEmail(String userName, String Email);
+    void deleteByUserNameOrEmail(String userName, String Email);
 }

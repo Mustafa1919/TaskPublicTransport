@@ -1,10 +1,20 @@
 package com.dw.exception;
 
+import com.dw.dto.RequestLog;
+import com.dw.enums.ACTION_TYPE;
+import com.dw.enums.STATUS;
+import com.dw.service.RequestService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+@RestControllerAdvice
+@RequiredArgsConstructor
 public class GlobalExceptionHandler {
+
+    private final RequestService requestService;
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorMessage> handleException(Exception ex){
@@ -14,6 +24,14 @@ public class GlobalExceptionHandler {
                 .code(9000)
                 .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
                 .build();
+
+        requestService.createRequestLog(
+                new RequestLog(ACTION_TYPE.GET,
+                        "Personnel",
+                        "",
+                        STATUS.FAIL,
+                        errorMessage.getMessage())
+        );
         return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -25,6 +43,14 @@ public class GlobalExceptionHandler {
                 .code(ex.getErrorType().getCode())
                 .httpStatus(ex.getErrorType().getHttpStatus())
                 .build();
+
+        requestService.createRequestLog(
+                new RequestLog(ACTION_TYPE.GET,
+                        "Personnel",
+                        "",
+                        STATUS.FAIL,
+                        errorMessage.getMessage())
+        );
         return new ResponseEntity<>(errorMessage, ex.getErrorType().getHttpStatus());
     }
 
@@ -36,6 +62,14 @@ public class GlobalExceptionHandler {
                 .code(ex.getErrorType().getCode())
                 .httpStatus(ex.getErrorType().getHttpStatus())
                 .build();
+
+        requestService.createRequestLog(
+                new RequestLog(ACTION_TYPE.GET,
+                        "Request",
+                        "",
+                        STATUS.FAIL,
+                        errorMessage.getMessage())
+        );
         return new ResponseEntity<>(errorMessage, ex.getErrorType().getHttpStatus());
     }
 }

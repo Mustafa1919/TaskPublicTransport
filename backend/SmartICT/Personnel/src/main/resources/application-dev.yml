@@ -12,14 +12,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/Personnel
     username: postgres
     password: postgre
-  profiles:
-    active: dev
 
 server:
-  port: 0
-eureka:
-  client:
-    service-url:
-      default-zone: http://localhost:8761/eureka
-  instance:
-    prefer-ip-address: true
+  port: 8091

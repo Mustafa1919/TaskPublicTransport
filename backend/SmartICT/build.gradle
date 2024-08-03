@@ -9,6 +9,11 @@ plugins {
 	id 'java-library'
 }
 
+ext {
+	set('springCloudVersion', "2023.0.3")
+}
+
+
 
 
 allprojects {
@@ -39,6 +44,12 @@ subprojects {
 			classpath("org.springframework.boot:spring-boot-gradle-plugin:${versions.springBoot}")
 		}
 	}
+
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		}
+	}
 }
 
 
@@ -58,12 +69,12 @@ allprojects {
 		implementation libs.springBootWeb
 		compileOnly libs.lombok
 		annotationProcessor libs.lombok
-		implementation libs.swaggerApi
 //		implementation libs.mapStruct
 //		annotationProcessor libs.mapStructProcessor
 //		implementation libs.postgreSql
 //		implementation libs.springBootDataJpa
-		testImplementation libs.test
+//		testImplementation libs.test
+//		testImplementation libs.mockito
 		testImplementation libs.springBootTest
 		implementation libs.swagger
 

@@ -28,6 +28,8 @@ public class Request {
     @Enumerated(EnumType.STRING)
     private STATUS status;
     private String message;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Employee employee;
 
     public Request(ACTION_TYPE actionType, String entityName, String entityId, STATUS status, String message) {
         this.actionType = actionType;

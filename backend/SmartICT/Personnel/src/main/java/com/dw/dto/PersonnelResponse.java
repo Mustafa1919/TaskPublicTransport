@@ -11,7 +11,7 @@ public record PersonnelResponse(
     public static PersonnelResponse fromEmployee(Employee employee) {
         return new PersonnelResponse(
                 employee.getUserName(),
-                employee.getEMail(),
+                employee.getEmail(),
                 employee.getRole()
         );
     }

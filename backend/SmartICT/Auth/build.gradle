@@ -6,4 +6,5 @@ dependencies {
     implementation libs.postgreSql
     implementation libs.springBootDataJpa
     implementation libs.security
+    implementation libs.feing
 }
